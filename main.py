@@ -1,12 +1,13 @@
 from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
 # request a url
 url = input("Insert URL:")
 page = urlopen(url)
 
 # extract and decode the html
-html_bytes = page.read()
-html = html_bytes.decode("utf-8")
+html = page.read().decode("utf-8")
 
-# print html
-print(html)
+# create soup object (the actual webpage w/o the html)
+soup = BeautifulSoup(html, "html.parser")
+print(soup.get_text())
