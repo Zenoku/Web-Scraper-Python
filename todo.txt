@@ -1,0 +1,6 @@
+- literally make it scrape stuff I need
+    - author full name, title of article, date published, publisher, and url
+- implement requests package
+- implement keyboard shortcuts support
+- implement support for custom ordering
+- compile to js or just rewrite in js for firefox extension
