@@ -10,12 +10,15 @@ except:
     print("Not a valid url")
     exit()
 
-# create soup object 
-soup = BeautifulSoup(page.text, "html.parser")
+# create soup object + gets everything
+soup = BeautifulSoup(page.content, "html.parser")
+results = soup.find(id="ResultsContainer")
+meta = soup.find(id = "meta")
+
 
 # stuff to get
 title = soup.title.string
 print(title)
 
-authors = soup.find("meta", property = "author")
+authors = meta.find_all("meta", property = "author")
 print(authors)
