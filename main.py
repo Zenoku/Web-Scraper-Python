@@ -12,13 +12,9 @@ except:
 
 # create soup object + gets everything
 soup = BeautifulSoup(page.content, "html.parser")
-results = soup.find(id="ResultsContainer")
-meta = soup.find(id = "meta")
-
+results = soup.find(id = "ResultsContainer")
+meta = soup.find_all(id = "meta")
 
 # stuff to get
 title = soup.title.string
 print(title)
-
-authors = meta.find_all("meta", property = "author")
-print(authors)
